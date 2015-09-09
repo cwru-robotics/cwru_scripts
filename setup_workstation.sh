@@ -5,10 +5,10 @@
 echo "Starting workstation setup..."
 
 # Make sure only root can run our script
-if [[ $EUID -ne 0 ]]; then
-   echo -e "\e[31mThis script must be run as root.\e[0m" 1>&2
-   exit 1
-fi
+# if [[ $EUID -ne 0 ]]; then
+#    echo -e "\e[31mThis script must be run as root.\e[0m" 1>&2
+#    exit 1
+# fi
 # ...
 
 echo -e "\e[1m \e[34m >>> Beginning ROS Indigo Installation \e[21m \e[39m"
@@ -27,7 +27,7 @@ echo -e "\e[34m >>> Beginning ros-indigo-desktop-full installation...\e[39m"
 
 echo -e "\e[34m >>> Setting up rosdep\e[39m"
 
-	sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
+	# sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 	sudo rosdep init
 	rosdep update
 	# sudo rosdep fix-permissions
@@ -65,7 +65,10 @@ echo -e "\e[34m >>> Starting workspace setup \e[39m"
 
 	sudo apt-get install ros-indigo-controller-interface ros-indigo-gazebo-ros-control ros-indigo-joint-state-controller ros-indigo-effort-controllers ros-indigo-moveit-msgs
 
+	(cd ~/ros_ws && catkin_make clean)
 	(cd ~/ros_ws && catkin_make --pkg cwru_srv)
+	
 	(cd ~/ros_ws && catkin_make --pkg baxter_core_msgs)
+	(cd ~/ros_ws && catkin_make --pkg baxter_traj_streamer)
 	(cd ~/ros_ws && catkin_make)
 	(cd ~/ros_ws && catkin_make install)
