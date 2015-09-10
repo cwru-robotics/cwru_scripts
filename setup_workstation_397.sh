@@ -1,15 +1,9 @@
 #!/bin/bash
 # Mobile Robotics Lab Workstation Setup Script
 # Luc Bettaieb 2015
+# v 0.1
 
 echo "Starting workstation setup..."
-
-# Make sure only root can run our script
-# if [[ $EUID -ne 0 ]]; then
-#    echo -e "\e[31mThis script must be run as root.\e[0m" 1>&2
-#    exit 1
-# fi
-# ...
 
 echo -e "\e[1m \e[34m >>> Beginning ROS Indigo Installation \e[21m \e[39m"
 echo -e "\e[34m >>> Setting up sources.list and keys... \e[39m"
@@ -27,10 +21,8 @@ echo -e "\e[34m >>> Beginning ros-indigo-desktop-full installation...\e[39m"
 
 echo -e "\e[34m >>> Setting up rosdep\e[39m"
 
-	# sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 	sudo rosdep init
 	rosdep update
-	# sudo rosdep fix-permissions
 
 echo -e "\e[34m >>> Setting up environment \e[39m"
 
@@ -61,8 +53,6 @@ echo -e "\e[34m >>> Starting workspace setup \e[39m"
 	(cd ~/ros_ws/src/rethink && git clone https://github.com/RethinkRobotics/baxter_common.git)
 	(cd ~/ros_ws/src/rethink && git clone https://github.com/RethinkRobotics/baxter_tools.git)
 	
-	echo -e "\e[31mSTILL NEED TO MANUALL INSTALL BAXTER_SIMULATOR\e[0m"
-
 	sudo apt-get install ros-indigo-controller-interface ros-indigo-gazebo-ros-control ros-indigo-joint-state-controller ros-indigo-effort-controllers ros-indigo-moveit-msgs
 
 	(cd ~/ros_ws && catkin_make clean)
@@ -70,5 +60,16 @@ echo -e "\e[34m >>> Starting workspace setup \e[39m"
 	
 	(cd ~/ros_ws && catkin_make --pkg baxter_core_msgs)
 	(cd ~/ros_ws && catkin_make --pkg baxter_traj_streamer)
+	(cd ~/ros_ws && catkin_make --pkg cartesian_moves)
+
 	(cd ~/ros_ws && catkin_make)
 	(cd ~/ros_ws && catkin_make install)
+
+echo -e "\e[34m >>> Adding workspace setup to the bashrc \e[39m"
+
+	echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+	source ~/.bashrc
+
+echo -e "\e[31mWARNING: STILL NEED TO MANUALLY CLONE BAXTER_SIMULATOR INSIDE ~/ros_ws/src/rethink \e[0m"
+
+echo -e "\e[34m Setup complete! \e[39m"
