@@ -44,6 +44,8 @@ echo -e "\e[34m >>> Starting workspace setup \e[39m"
 	(cd ~/ros_ws/src && git clone https://github.com/cwru-robotics/cwru_baxter.git)
 
 	(cd ~/ros_ws/src && git clone https://github.com/cwru-robotics/external_packages.git)
+	
+	(cd ~/ros_ws/src && git clone https://github.com/cwru-robotics/cwru_msgs.git)
 
 	(cd ~/ros_ws/src && git clone https://github.com/cwru-robotics/eecs-397-f15.git)
 
