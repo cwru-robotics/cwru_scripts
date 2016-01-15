@@ -28,7 +28,7 @@ then
 
   cd ~/ros_ws/src/cwru && git clone https://github.com/cwru-robotics/cwru_msgs.git
   cd ~/ros_ws/src/cwru && git clone https://github.com/cwru-robotics/cwru_base.git
-  
+
   cd ~/ros_ws && catkin_make
   cd ~/ros_ws && catkin_make install
 
@@ -38,6 +38,6 @@ then
   echo "export ROS_WORKSPACE='~/ros_ws'" >> ~/.bashrc
   
 else
-	echo "Put your username as the first argument!"
+	echo "USAGE: ./setup_workspace_376 github_username github_email@email.com"
 
 fi
