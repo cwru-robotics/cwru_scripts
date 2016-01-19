@@ -1,7 +1,7 @@
 #!/bin/bash
 # EECS 397/497 Mobile Robotics
 # ROS + Dependencies Installation
-# v 0.1
+# v 0.2
 
 echo "Beginning ROS Installation"
 
