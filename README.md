@@ -1,8 +1,8 @@
 ### robot_workstation_setup
 
-This repository contains scripts that allow for end users and lab assistants to easily set up computers for ROS work after a fresh installation of Ubuntu.
+This repository contains scripts that allow for end users and lab assistants to easily set up computers for ROS work after a fresh installation of Ubuntu as well as install useful packages and resources.
 
-Currently, we only have a script for setting up a workstation for class code development for EECS 397/600: Modern Robotic Programming.
+**EECS 376 Students**:  Please check the mobile_robotics subdirectory.
 
 To run a script, make sure its permissions are correct:
 
