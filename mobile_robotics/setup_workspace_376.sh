@@ -35,7 +35,7 @@ then
   echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
   echo "alias baxter_master='export ROS_MASTER_URI="http://baxter01:11311"'" >> ~/.bashrc
   echo "alias cs_create_pkg='~/ros_ws/src/cwru/learning_ros_external_packages/cs_create_pkg.py'" >> ~/.bashrc
-  echo "export ROS_WORKSPACE='~/ros_ws'" >> ~/.bashrc
+  echo "export ROS_WORKSPACE=$HOME'/ros_ws'" >> ~/.bashrc
   
 else
 	echo "USAGE: ./setup_workspace_376 github_username github_email@email.com"
