@@ -46,5 +46,5 @@ echo -e "\e[1m \e[34m >>> Installing support software \e[21m \e[39m"
   sudo apt-get --yes --force-yes install sublime-text-installer 
 
   sudo apt-get --yes --force-yes install netbeans
-  sudo apt-get --yes --force-yes install gitk
+  sudo apt-get --yes --force-yes install gitk git-gui
   sudo apt-get --yes --force-yes install kazam
