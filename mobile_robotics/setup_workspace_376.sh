@@ -10,13 +10,15 @@ EMAIL=$2
 
 if [ "$USERNAME" != "" ] || [ "$EMAIL" != "" ];
 then
-	mkdir -p ~/ros_ws/src
+  echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+	
+  mkdir -p ~/ros_ws/src
+	
+  cd ~/ros_ws/src  && catkin_init_workspace
+  cd ~/ros_ws && catkin_make
 
-	cd ~/ros_ws/src  && catkin_init_workspace
-	cd ~/ros_ws && catkin_make
-
-	mkdir -p ~/ros_ws/src/cwru
-	mkdir -p ~/ros_ws/src/student_code
+  mkdir -p ~/ros_ws/src/cwru
+  mkdir -p ~/ros_ws/src/student_code
 
   git config --global user.name "$USERNAME"
   git config --global user.email "$EMAIL"
@@ -31,12 +33,13 @@ then
 
   cd ~/ros_ws && catkin_make
   cd ~/ros_ws && catkin_make install
-
-  echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+  
   echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
   echo "alias baxter_master='export ROS_MASTER_URI="http://baxter01:11311"'" >> ~/.bashrc
   echo "alias cs_create_pkg='~/ros_ws/src/cwru/learning_ros_external_packages/cs_create_pkg.py'" >> ~/.bashrc
   echo "export ROS_WORKSPACE=$HOME'/ros_ws'" >> ~/.bashrc
+  
+  source ~/.bashrc
   
 else
 	echo "USAGE: ./setup_workspace_376 github_username github_email@email.com"
