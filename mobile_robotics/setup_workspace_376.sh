@@ -10,6 +10,7 @@ EMAIL=$2
 
 if [ "$USERNAME" != "" ] || [ "$EMAIL" != "" ];
 then
+  source /opt/ros/indigo/setup.bash
   echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 	
   mkdir -p ~/ros_ws/src
