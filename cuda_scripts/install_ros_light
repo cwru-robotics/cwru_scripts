@@ -37,3 +37,9 @@ echo -e "\e[34m >>> Setting up rosinstall \e[39m"
   source ~/.bashrc
 
 echo -e "\e[34m >>> done! \e[39m"
+
+
+sudo apt-get install ros-jade-tf2-geometry-msgs 
+
+
+#Add the requisite git requirements.

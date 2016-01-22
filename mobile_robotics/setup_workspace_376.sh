@@ -24,7 +24,7 @@ then
   cd ~/ros_ws/src && git clone https://github.com/cwru-robotics/eecs_376_s16.git
 
   cd ~/ros_ws/src/cwru && git clone https://github.com/wsnewman/learning_ros_external_packages.git
-  cd ~/ros_ws/src && git clone https://github.com/wsnewman/learning_ros.git
+  cd ~/ros_ws/src && git clone https://github.com/wsnewman/learning_ros.gitcd sr	
 
   cd ~/ros_ws/src/cwru && git clone https://github.com/cwru-robotics/cwru_msgs.git
   cd ~/ros_ws/src/cwru && git clone https://github.com/cwru-robotics/cwru_base.git
