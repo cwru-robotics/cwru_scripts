@@ -2,6 +2,8 @@
 
 This repository contains scripts that allow for end users and lab assistants to easily set up computers for ROS work after a fresh installation of Ubuntu as well as install useful packages and resources.
 
+The scripts in this repository are also meant for students who want to develop for the daVinci research kit.
+
 **EECS 376 Students**:  Please check the mobile_robotics subdirectory.
 
 To run a script, make sure its permissions are correct:
