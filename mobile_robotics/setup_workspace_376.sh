@@ -39,7 +39,10 @@ then
   echo "alias baxter_master='export ROS_MASTER_URI="http://baxter01:11311"'" >> ~/.bashrc
   echo "alias cs_create_pkg='~/ros_ws/src/cwru/learning_ros_external_packages/cs_create_pkg.py'" >> ~/.bashrc
   echo "export ROS_WORKSPACE=$HOME'/ros_ws'" >> ~/.bashrc
-  
+  echo "ROS_IP=`hostname -I | grep 172.20`" >> ~/.bashrc
+  echo "export ROS_IP=$ROS_IP" >> ~/.bashrc
+  echo "jinx_master() { echo What is Jinx's IP address?; read JINX_IP; export ROS_MASTER_URI="$JINX_IP:11311";}" >> ~/.bashrc
+
   source ~/.bashrc
   
 else
