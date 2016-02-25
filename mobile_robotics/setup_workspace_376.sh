@@ -1,7 +1,7 @@
 #!/bin/bash
 # EECS 376/476 Mobile Robotics
 # Workspace setup
-# v 0.2
+# v 0.25
 
 echo "Setting up workspace."
 
@@ -41,6 +41,8 @@ then
   echo "export ROS_WORKSPACE=$HOME'/ros_ws'" >> ~/.bashrc
   
   source ~/.bashrc
+  
+  rosdep update
   
 else
 	echo "USAGE: ./setup_workspace_376 github_username github_email@email.com"
