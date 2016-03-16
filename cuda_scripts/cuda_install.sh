@@ -2,11 +2,27 @@
 
 
 #Some how autodownload the dpkg file.
-
+cd third_party_libs
+mkdir cuda
+cd cuda
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb 
 sudo apt-get update
 sudo apt-get install cuda
 
-export PATH=/usr/local/cuda-7.5/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
+echo "export PATH=/usr/local/cuda-7.5/bin:$PATH" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc
+
+source ~/.bashrc
+
+echo  "installing examples"
+
+./cuda-install-samples-7.5.sh ~
+
+cd NVIDIA_CUDA-7.5_Samples/1_Utilities/deviceQuery
+make
+cd ../../bin/x86_64/linux/release/
+./deviceQuery
+
+echo "Please restart this machine"
 
