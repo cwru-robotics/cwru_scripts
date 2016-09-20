@@ -26,11 +26,11 @@ sudo apt-get install ros-indigo-desktop --yes
 
 sudo rosdep init; rosdep update
 
-sudo apt-get install ros-indigo-gazebo7-* ros-indigo-controller-manager ros-indigo-effort-controllers ros-indigo-joint-state-controller --yes
+sudo apt-get install ros-indigo-gazebo7-* ros-indigo-controller-manager ros-indigo-joint-trajectory-controller ros-indigo-effort-controllers ros-indigo-joint-state-controller --yes
 
 # install gear packages from source.  there dont seem to be binaries yet?
 mkdir -p ~/gear_ws/src
-(cd ~/gear_ws/src && git clone https://bitbucket.org/osrf/ariac.git)
+(cd ~/gear_ws/src && git clone https://bitbucket.org/osrf/gear)
 
 source /opt/ros/indigo/setup.bash
 
