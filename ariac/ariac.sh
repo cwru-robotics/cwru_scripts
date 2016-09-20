@@ -30,7 +30,7 @@ sudo apt-get install ros-indigo-gazebo7-* ros-indigo-controller-manager ros-indi
 
 # install gear packages from source.  there dont seem to be binaries yet?
 mkdir -p ~/gear_ws/src
-(cd ~/gear_ws/src && git clone https://bitbucket.org/osrf/gear)
+(cd ~/gear_ws/src && git clone https://bitbucket.org/osrf/ariac.git)
 
 source /opt/ros/indigo/setup.bash
 
