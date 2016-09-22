@@ -17,12 +17,20 @@ source ~/.bashrc
 
 echo  "installing examples"
 
+sudo Ldconfig
+
 ./cuda-install-samples-7.5.sh ~
 
 cd NVIDIA_CUDA-7.5_Samples/1_Utilities/deviceQuery
 make
 cd ../../bin/x86_64/linux/release/
+
+#this won't work
+echo "Please restart this machine"
+
+sudo shutdown now -r
+
 ./deviceQuery
 
-echo "Please restart this machine"
+
 

@@ -38,8 +38,11 @@ echo -e "\e[34m >>> Setting up rosinstall \e[39m"
   source ~/.bashrc
 
 
-
 sudo apt-get install ros-jade-image-transport ros-jade-eigen-conversions ros-jade-tf ros-jade-tf2 ros-jade-camera-calibration-parsers ros-jade-tf2-geometry-msgs ros-jade-driver-base ros-jade-camera-info-manager ros-jade-pcl-ros
+
+
+
+
 
 echo -e "\e[34m >>> done! \e[39m"
 
