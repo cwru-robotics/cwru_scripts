@@ -31,11 +31,16 @@ sudo apt-get install ros-indigo-gazebo7-* ros-indigo-controller-manager ros-indi
 # install gear packages from source.  there dont seem to be binaries yet?
 mkdir -p ~/gear_ws/src
 (cd ~/gear_ws/src && git clone https://bitbucket.org/osrf/gear)
+(cd ~/gear_ws/src && git clone https://github.com/ros-controls/ros_control.git)
 
+# Source ROS
 source /opt/ros/indigo/setup.bash
 
+# Make the workspace
+(cd ~/gear_ws && catkin_make)
 (cd ~/gear_ws && catkin_make install)
 
+# Source the workspace
 source ~/gear_ws/install/setup.bash
 
 echo 'source /opt/ros/indigo/setup.bash' << ~/.bashrc
