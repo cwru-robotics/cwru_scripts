@@ -1,6 +1,19 @@
 
 
 # This File is depreciated.
+# New commands to run are:
+# 1. remove the nov
+nano /etc/modprobe.d/blacklist-nouveau.conf
+…and add these lines at the end:
+sudo apt-get purge xserver-xorg-video-nouveau
+sudo lightdm stop
+blacklist nouveau
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
+
+lshw -c video | 'configuration'
 #Some how autodownload the dpkg file.
 cd third_party_libs
 mkdir cuda
