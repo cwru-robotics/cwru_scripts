@@ -1,6 +1,6 @@
 
 
-
+# This File is depreciated.
 #Some how autodownload the dpkg file.
 cd third_party_libs
 mkdir cuda
